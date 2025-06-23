@@ -52,7 +52,7 @@ interface ChatThread {
 }
 
 // Backend server URL
-const SOCKET_SERVER_URL = 'http://localhost:5000'
+const SOCKET_SERVER_URL = import.meta.env.VITE_BACKEND_URL || 'https://rr-1-9mim.onrender.com'
 
 // Enhanced theme options
 const THEMES = [

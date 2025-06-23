@@ -19,7 +19,7 @@ const server = http.createServer(app);
 // Use CORS middleware
 // Allow requests from your React frontend URL
 app.use(cors({
-  origin: 'http://localhost:5173', // Updated to match frontend URL
+  origin: 'https://realtimeapp-eta.vercel.app', // Updated to match frontend URL
   methods: ['GET', 'POST']
 }));
 
