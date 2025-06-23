@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { db } from '../config/firebase'
 import { collection, query, where, getDocs } from 'firebase/firestore'
 
@@ -103,9 +103,9 @@ export default function Login() {
           </div>
 
           <div className="text-center mt-4">
-            <a href="/signup" className="font-medium text-indigo-600 hover:text-purple-600 transition-colors duration-200 underline underline-offset-2">
+            <Link to="/signup" className="font-medium text-indigo-600 hover:text-purple-600 transition-colors duration-200 underline underline-offset-2">
               Don't have an account? Sign up
-            </a>
+            </Link>
           </div>
         </form>
       </div>
