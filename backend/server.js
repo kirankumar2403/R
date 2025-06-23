@@ -4,6 +4,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const admin = require('firebase-admin');
 const cors = require('cors');
+const path = require('path');
 
 // Initialize Firebase Admin SDK
 // The GOOGLE_APPLICATION_CREDENTIALS environment variable should point to your service account key file
@@ -118,4 +119,12 @@ server.listen(PORT, () => {
 // Basic test route
 app.get('/', (req, res) => {
   res.send('Chat backend is running!');
+});
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../build'))); // Adjust path if needed
+
+// Catch-all route to serve index.html for React Router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build', 'index.html')); // Adjust path if needed
 }); 

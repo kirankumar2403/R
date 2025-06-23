@@ -575,7 +575,7 @@ export default function ChatRoom() {
                           {/* Blue double tick if all recipients have read */}
                           {chatParticipants &&
                             message.readBy &&
-                            chatParticipants.every(uid => uid === currentUser.uid || message.readBy.includes(uid)) ? (
+                            chatParticipants.every(uid => uid === currentUser.uid || (message.readBy ?? []).includes(uid)) ? (
                               <span className="text-blue-400 font-bold ml-1">✓✓</span>
                           ) : // Grey double tick if delivered to at least one recipient
                             message.readBy && message.readBy.length > 1 ? (
